@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Property</title>
+    <style>
+        :root{
+            --side-width: 200px;
+            --dark-border: 2px solid black;
+            --main-color: orange;
+            --border-color: slateblue;
+            --background-color: slateblue;
+        }
+        h1{
+            color: var(--main-color);
+        }
+        p{
+            color: var(--main-color);
+        }
+        h2{
+            border: 2px solid var(--border-color);
+            color: slateblue;color: var(--main-color);
+        }
+        h6{
+            background-color: var(--background-color);
+        }
+        footer{
+            clear: both;
+            color: var(--main-color);
+            border: var(--dark-border);
+        }
+        .side-nav, 
+        .blogs{
+            float: left;
+            height: 500px;
+        }
+        /* aside{
+            background-color: springgreen;
+            width: 200px;
+        } */
+        aside{
+            background-color: orange;
+            width: var(--side-width);
+        }
+        /* .blogs{
+            background-color: tomato;
+            width: calc(100% - 200px);
+        } */
+        .blogs{
+            background-color: orangered;
+            width: calc(100% - var(--side-width));
+        }
+        /* .blogs{
+            background-color: orangered;
+            width: calc(100% - 2*var(--side-width));
+        } */
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>I am exploring Custom Properties</h1>
+        <p>Welcome to my website</p>      
+    </header>
+    <main>
+        <h2>My awesome content in 2022</h2>
+        <h6>This is tiny heading</h6>
+        <section>
+            <aside class="side-nav">
+                My side Navigation
+            </aside>
+            <div class="blogs">
+                <h4>My Bolgs</h4>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><small>copyright-2022</small></p>
+    </footer>
+</body>
+</html>
